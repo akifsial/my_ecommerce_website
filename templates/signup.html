@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock title %}
+{% block signupactive %}active{% endblock signupactive %}
+{% block body %}
+
+<!-- template for Signup form -->
+<div class="container py-4">
+    <div class="col-lg-5 shadow mx-auto p-0">
+        <div class="alert alert-dark text-center shadow">
+            <h2>Create New Account</h2>
+        </div>
+        <div class="container text-center my-3 mt-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png"
+                alt="" class="img-fluid" style="height: 150px;">
+        </div>
+        <div class="p-4">
+            <form action="/signup/" method="post">
+                {% csrf_token %}
+                
+                {{form.as_p}}
+
+                <hr>
+                <div class="text-center">
+                    <input class="btn btn-dark shadow btn-sm" type="submit" value="Create Account">
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+{% endblock body %}

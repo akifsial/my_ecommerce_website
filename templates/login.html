@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block loginactive %}active{% endblock loginactive %}
+{% block body %}
+
+<!-- template for login form -->
+<div class="container py-4">
+    <div class="col-lg-4 shadow mx-auto p-0 mt-4">
+        <div class="alert alert-dark text-center shadow">
+            <h2>Login To zshop.PK</h2>
+        </div>
+        <div class="container text-center my-3 mt-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png"
+                alt="" class="img-fluid" style="height: 150px;">
+        </div>
+        <div class="p-4">
+            <form action="/login/" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <hr>
+                <div class="text-center">
+                    <input class="btn btn-dark shadow btn-sm" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
